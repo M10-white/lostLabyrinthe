@@ -12,7 +12,7 @@ class MazeGame:
         self.canvas.pack()
 
         self.load_maze()
-        self.player_pos = [2, 1]  # Position initiale du joueur
+        self.player_pos = [1, 1]  # Position initiale du joueur
         self.light_radius = 2  # Rayon de la lumière (en cellules)
         
         # Charger les images des sprites
@@ -23,6 +23,9 @@ class MazeGame:
             'right': Image.open('assets/player_right.png').resize((self.cell_size, self.cell_size), Image.LANCZOS),
         }
         self.player_photo = ImageTk.PhotoImage(self.sprites['down'])  # Par défaut, l'image du joueur fait face vers le bas
+
+        # Charger l'image de la porte
+        self.door_image = ImageTk.PhotoImage(Image.open('assets/door.png').resize((self.cell_size, self.cell_size), Image.LANCZOS))
 
         self.draw_maze()  # Dessiner le labyrinthe initialement
         self.draw_player()  # Dessiner le joueur initialement
@@ -39,20 +42,38 @@ class MazeGame:
         pass
 
     def reveal_maze(self):
-        # Effacer les murs précédemment dessinés
+        # Effacer les murs et la porte précédemment dessinés
         self.canvas.delete('maze')
+        self.canvas.delete('door')
 
-        # Révéler uniquement les murs qui touchent le joueur
+        # Révéler uniquement les murs et afficher la porte si c'est la sortie
         for y in range(len(self.maze)):
             for x in range(len(self.maze[0])):
                 if self.maze[y][x] == '#':  # Vérifie si c'est un mur
-                    if self.is_wall_adjacent_to_light(x, y):
+                    if self.is_adjacent_to_light(x, y):
                         x1 = x * self.cell_size
                         y1 = y * self.cell_size
                         x2 = x1 + self.cell_size
                         y2 = y1 + self.cell_size
                         # Dessiner les murs uniquement s'ils sont adjacents au joueur
                         self.canvas.create_rectangle(x1, y1, x2, y2, fill='white', outline='white', tags='maze')
+                    
+                elif self.maze[y][x] == 'S':  # Vérifie si c'est la sortie
+                    # Ne dessiner la porte que si elle est proche du joueur
+                    if self.is_adjacent_to_light(x, y):
+                        self.canvas.create_image((x * self.cell_size) + self.cell_size // 2, 
+                                                (y * self.cell_size) + self.cell_size // 2, 
+                                                image=self.door_image, tags='door')
+
+    def is_adjacent_to_light(self, x, y):
+        # Vérifie si la cellule est à l'intérieur du rayon de lumière
+        player_x, player_y = self.player_pos
+
+        dx = abs(player_x - y)  # Calculer la différence en x
+        dy = abs(player_y - x)  # Calculer la différence en y
+
+        # Si la distance entre le joueur et la cellule est inférieure ou égale au rayon de lumière
+        return dx + dy <= self.light_radius
 
     def draw_player(self):
         # Effacer le joueur précédemment dessiné pour éviter les doublons
