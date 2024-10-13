@@ -1,5 +1,7 @@
 MIT License
 
+Project : LostLabyrinthe
+
 Copyright (c) 2024 CHKWEBDEV (https://chkwebdev.com)
 
 Git-Hub : M10-white (https://github.com/M10-white)

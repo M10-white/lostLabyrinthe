@@ -2,7 +2,7 @@
 
 Un jeu de labyrinthe développé en Python utilisant Tkinter pour l'interface graphique. Le joueur doit naviguer à travers un labyrinthe généré aléatoirement pour atteindre la sortie tout en collectant des points. Ce projet a été réalisé pour offrir une expérience de jeu immersive avec des graphismes simples et un gameplay engageant.
 
-## Table des matières
+## Sommaire
 
 - [Fonctionnalités](#fonctionnalités)
 - [Technologies utilisées](#technologies-utilisées)
