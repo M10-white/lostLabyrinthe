@@ -1,0 +1,11 @@
+MIT License
+
+Copyright (c) 2024 CHKWEBDEV (https://chkwebdev.com)
+
+Git-Hub : M10-white (https://github.com/M10-white)
+
+Permission est accordée, gratuitement, à toute personne obtenant une copie de ce logiciel et des fichiers associés (le "Logiciel"), de traiter le Logiciel sans restriction, y compris, sans limitation, les droits d'utiliser, copier, modifier, fusionner, publier, distribuer, sous-licencier et/ou vendre des copies du Logiciel, et de permettre aux personnes à qui le Logiciel est fourni de le faire, sous réserve des conditions suivantes :
+
+1. La mention de droits d'auteur ci-dessus et cette permission doivent être incluses dans toutes les copies ou parties substantielles du Logiciel.
+
+2. LE LOGICIEL EST FOURNI "EN L'ÉTAT", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU IMPLICITE, Y COMPRIS, MAIS SANS S'Y LIMITER, LES GARANTIES D'ADÉQUATION À UN USAGE PARTICULIER, DE NON-INFRINGEMENT ET DE TITRE. EN AUCUN CAS LES AUTEURS OU TITULAIRES DE DROITS D'AUTEUR NE PEUVENT ÊTRE TENUS RESPONSABLES DE TOUTE RÉCLAMATION, DOMMAGE OU AUTRE RESPONSABILITÉ, QU'ELLE SOIT EN ACTION DE CONTRACTE, DE RESPONSABILITÉ STRICTE OU AUTRE, RÉSULTANT DE OU EN RELATION AVEC LE LOGICIEL OU L'UTILISATION OU D'AUTRES TRAITEMENTS DU LOGICIEL.
